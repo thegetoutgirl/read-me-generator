@@ -1,95 +1,90 @@
-const questions = [
+// This code came with the homework assignment
 
-];
+// const questions = [
 
-function writeToFile(fileName, data) {
-}
+// ];
 
-function init() {
+// function writeToFile(fileName, data) {
+// }
 
-}
+// function init() {
 
-init();
+// }
+
+// init();
 
 // Below this line are the in-class activities
 
 const inquirer = require("inquirer");
 const fs = require("fs");
 const util = require("util");
+const markdown = require("./utils/generateMarkdown.js");
+const api = require("./utils/api.js")
 
 const writeFileAsync = util.promisify(fs.writeFile);
 
-function promptUser() {
+function autoReadMePrompt() {
   return inquirer.prompt([
     {
       type: "input",
-      name: "name",
-      message: "What is your name?"
+      name: "title",
+      message: "Project Name"
     },
     {
       type: "input",
-      name: "location",
-      message: "Where are you from?"
+      name: "description",
+      message: "Description."
     },
     {
       type: "input",
-      name: "hobby",
-      message: "What is your favorite hobby?"
+      name: "contents",
+      message: "Table of Contents:"
     },
     {
       type: "input",
-      name: "food",
-      message: "What is your favorite food?"
+      name: "installation",
+      message: "Installation:"
     },
     {
       type: "input",
-      name: "github",
-      message: "Enter your GitHub Username"
+      name: "usage",
+      message: "Instructions for use:"
     },
     {
       type: "input",
-      name: "linkedin",
-      message: "Enter your LinkedIn URL."
-    }
+      name: "license",
+      message: "License:"
+    },
+    {
+        type: "input",
+        name: "contributors",
+        message: "List contributors:"
+      },
+      {
+        type: "input",
+        name: "tests",
+        message: "Explain tests you have developed, and provide examples on how to use them."
+      },
+      {
+        type: "input",
+        name: "future",
+        message: "Describe any future opportunities for development:"
+      }
   ]);
-}
-
-function generateHTML(answers) {
-  return `
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <title>Document</title>
-</head>
-<body>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Hi! My name is ${answers.name}</h1>
-    <p class="lead">I am from ${answers.location}.</p>
-    <h3>Example heading <span class="badge badge-secondary">Contact Me</span></h3>
-    <ul class="list-group">
-      <li class="list-group-item">My GitHub username is ${answers.github}</li>
-      <li class="list-group-item">LinkedIn: ${answers.linkedin}</li>
-    </ul>
-  </div>
-</div>
-</body>
-</html>`;
 }
 
 async function init() {
   console.log("hi")
   try {
-    const answers = await promptUser();
+    const answers = await autoReadMePrompt();
+    
+    // const userData = api.getUser(answers.githubID);
 
-    const html = generateHTML(answers);
+    const doc = markdown(answers);
 
-    await writeFileAsync("index.html", html);
+    await writeFileAsync("readme-demo.md", doc);
 
-    console.log("Successfully wrote to index.html");
+    console.log(doc);
   } catch(err) {
     console.log(err);
   }
