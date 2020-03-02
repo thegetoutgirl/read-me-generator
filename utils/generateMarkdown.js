@@ -11,7 +11,7 @@ ${data.description}
 # Table of Contents
 
   #### 1. Installation
-  #### 2.  Usage
+  #### 2. Usage
   #### 3. License
   #### 4. Contributing
   #### 5. Tests
@@ -20,7 +20,7 @@ ${data.description}
 # Installation
 ${data.installation}
 
-# Usasge
+# Usage
 ${data.usage}
 
 # License
