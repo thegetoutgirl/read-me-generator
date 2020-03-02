@@ -1,26 +1,39 @@
+
 # Project Title
-h
+ReadMe Generator
+
+<img src = "https://img.shields.io/github/last-commit/thegetoutgirl/read-me-generator"> <img src ="https://img.shields.io/badge/current%20status-%F0%9F%92%A5-white">
 
 # Project Description
-lh
+A CLI that generates a README Document from a series of command line prompts
 
 # Table of Contents
-nkhgiu
+
+  ### Installation
+  ### Usage
+  ### License
+  ### Contributing
+  ### Tests
+  ### Future Development
 
 # Installation
-ugiuv
+None needed
 
 # Usasge
-gviyvy'uvyv'
+Answer the questions to generate a markdown file
 
 # License
-ufyf'
+MIT
 
-# Contributors
-yfufig'
+# Contributing
+All suggestions welcome!
 
 # Tests
-cycufg'
+none
 
 # Future Development
-fyfp;v
+Would like to create a table of contents from Javascript functions.
+
+# Questions
+<img src="https://avatars2.githubusercontent.com/u/60320896?v=4" alt= "GitHubUser" width="60" height="60" />
+

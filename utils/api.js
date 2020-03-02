@@ -1,15 +1,19 @@
 const axios = require("axios");
 
 const api = {
-  getUser(username) {
-  return axios
-    .get("GitHub Api goes here")
-    .then(function(response) {
-      return response;
-        console.log(response);
-    });
-  }
+  getUser(githubID) {
+    const queryURL = `https://api.github.com/users/${githubID}`;
+    return axios
+    .get(queryURL)
+    .then(function(response){
+      return response.data
 
+
+    })
+    // .catch (function(error) {
+    //   console.log(error);
+    // });
+  }
 };
 
 module.exports = api;
