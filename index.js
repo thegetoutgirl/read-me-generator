@@ -7,7 +7,7 @@ const api = require("./utils/api.js")
 const writeFileAsync = util.promisify(fs.writeFile);
 
 function autoReadMePrompt() {
-    console.log("Hi");
+    console.log(" hi");
     return inquirer.prompt([
         {
             type: "input",
@@ -62,7 +62,6 @@ async function init() {
         const answers = await autoReadMePrompt();
 
         const userData = await api.getUser(answers.githubID);
-            console.log(userData.avatar_url);
             answers.avatar_url = userData.avatar_url;
 
         const doc = generateMarkdown(answers);

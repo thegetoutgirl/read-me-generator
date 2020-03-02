@@ -10,12 +10,12 @@ ${data.description}
 
 # Table of Contents
 
-  ### Installation
-  ### Usage
-  ### License
-  ### Contributing
-  ### Tests
-  ### Future Development
+  #### 1. Installation
+  #### 2.  Usage
+  #### 3. License
+  #### 4. Contributing
+  #### 5. Tests
+  #### 6. Future Development
 
 # Installation
 ${data.installation}
